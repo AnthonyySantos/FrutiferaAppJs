@@ -1,7 +1,7 @@
-# FrutiferaAppJs
+// FrutiferaAppJs
 
-Página HTML com CSS:
-
+Parte Do HTML:
+[FrutiferaAppJs.html](https://github.com/user-attachments/files/25401062/FrutiferaAppJs.html)
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,7 +23,7 @@ Página HTML com CSS:
         justify-content: center;
         }
 
-    </style>
+</style>
 
 </head>
 <body>
@@ -95,7 +95,7 @@ Página HTML com CSS:
 </html>
 
 Parte Do JavaScript:
-
+[FrutasJs.js](https://github.com/user-attachments/files/25401067/FrutasJs.js)
 
 let formFruta = document.getElementById('formFruta');
 
@@ -105,13 +105,13 @@ let frutas = JSON.parse(localStorage.getItem('frutas')) || [];
 formFruta.onsubmit = (event) => {
     event.preventDefault();
 
-// Pegando os valores DENTRO do submit
+    // Pegando os valores DENTRO do submit
     let nome = document.getElementById('nomePopular').value;
     let nomeC = document.getElementById('nomeCientifico').value;
     let producao = document.getElementById('producao').value;
     let data = document.getElementById('dataPlantio').value;
 
-// Criando o objeto
+    // Criando o objeto
     let formFrutaJson = {
         id: Date.now(),
         nome: nome,
@@ -120,13 +120,13 @@ formFruta.onsubmit = (event) => {
         dataPlantio: data
     };
 
-// Adicionando no array
+    // Adicionando no array
     frutas.push(formFrutaJson);
 
 
-// Salvando no LocalStorage
+    // Salvando no LocalStorage
     localStorage.setItem('frutas', JSON.stringify(frutas));
-// Fechar o modal ao adicionar
+    // Fechar o modal ao adicionar
     listarFrutas();
 
     let modalElement = document.getElementById('modalCadastro');
