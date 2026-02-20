@@ -1,14 +1,14 @@
 // FrutiferaAppJs
 
-Parte Do HTML:
-[FrutiferaAppJs.html](https://github.com/user-attachments/files/25401062/FrutiferaAppJs.html)
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrutiferaApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    Parte Do HTML:
+    [FrutiferaAppJs.html](https://github.com/user-attachments/files/25401062/FrutiferaAppJs.html)
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FrutiferaApp</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .plus-btn {
@@ -23,25 +23,25 @@ Parte Do HTML:
         justify-content: center;
         }
 
-</style>
+    </style>
 
-</head>
-<body>
-    <div id="home" class="container-fluid p-0">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="fruta1.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="fruta2.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="fruta3.jpg" class="d-block w-100">
+    </head>
+    <body>
+        <div id="home" class="container-fluid p-0">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="fruta1.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="fruta2.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="fruta3.jpg" class="d-block w-100">
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
 
     <div class="container mt-5">
     <h2 class="text-center mb-4">Cadastre Sua Fruta Aqui</h2>
@@ -91,19 +91,19 @@ Parte Do HTML:
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="FrutasJs.js"></script>
 
-</body>
-</html>
-
-Parte Do JavaScript:
-[FrutasJs.js](https://github.com/user-attachments/files/25401067/FrutasJs.js)
-
-let formFruta = document.getElementById('formFruta');
-
-// Recupera do LocalStorage ou cria array vazio
-let frutas = JSON.parse(localStorage.getItem('frutas')) || [];
-
-formFruta.onsubmit = (event) => {
-    event.preventDefault();
+    </body>
+    </html>
+    
+    Parte Do JavaScript:
+    [FrutasJs.js](https://github.com/user-attachments/files/25401067/FrutasJs.js)
+    
+    let formFruta = document.getElementById('formFruta');
+    
+    // Recupera do LocalStorage ou cria array vazio
+    let frutas = JSON.parse(localStorage.getItem('frutas')) || [];
+    
+    formFruta.onsubmit = (event) => {
+        event.preventDefault();
 
     // Pegando os valores DENTRO do submit
     let nome = document.getElementById('nomePopular').value;
@@ -137,13 +137,13 @@ formFruta.onsubmit = (event) => {
     formFruta.reset();
 
     console.log("Salvo com sucesso!");
-};
-
-// Criar Cards
-function listarFrutas() {
-    let frutas = JSON.parse(localStorage.getItem('frutas')) || [];
-    let lista = document.getElementById("listaFrutas");
-    lista.innerHTML = "";
+    };
+    
+    // Criar Cards
+    function listarFrutas() {
+        let frutas = JSON.parse(localStorage.getItem('frutas')) || [];
+        let lista = document.getElementById("listaFrutas");
+        lista.innerHTML = "";
 
     frutas.forEach(fruta => {
         lista.innerHTML += `
@@ -160,13 +160,13 @@ function listarFrutas() {
             </div>
         </div>
         `;
-    });
-}
-
-// Função de calculo
-function calcularIdadeMeses(dataPlantio) {
-    let hoje = new Date();
-    let plantio = new Date(dataPlantio);
+        });
+    }
+    
+    // Função de calculo
+    function calcularIdadeMeses(dataPlantio) {
+        let hoje = new Date();
+        let plantio = new Date(dataPlantio);
 
     let anos = hoje.getFullYear() - plantio.getFullYear();
     let meses = hoje.getMonth() - plantio.getMonth();
@@ -177,7 +177,7 @@ function calcularIdadeMeses(dataPlantio) {
     }
 
     return totalMeses;
-}
-
-
-window.onload = listarFrutas;
+    }
+    
+    
+    window.onload = listarFrutas;
